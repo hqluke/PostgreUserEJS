@@ -1,0 +1,22 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1><%=Title%></h1>
+        <% if (usernames.length > 0) { %>
+        <ul>
+            <% usernames.forEach(user => { %>
+            <li><%= user.username %></li>
+            <% }) %>
+        </ul>
+        <% } else { %>
+        <p>No usernames found</p>
+        <% } %>
+        <a href="/">Back</a>
+        <a href="/new">Create a username</a>
+    </body>
+</html>

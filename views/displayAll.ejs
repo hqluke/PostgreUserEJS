@@ -1,0 +1,30 @@
+<html lang="en">
+    <head>
+        <title>All Users</title>
+    </head>
+    <body>
+        <h1>All Users</h1>
+        <% if (usernames.length > 0) { %>
+        <ul>
+            <% usernames.forEach(user => { %>
+            <li><%= user.username %></li>
+            <% }) %>
+        </ul>
+        <% } else { %>
+        <p>No usernames found</p>
+        <% } %>
+        <h2>Search for a username</h2>
+        <form action="/search" method="post">
+            <input
+                type="text"
+                name="search"
+                placeholder="Search for a username"
+            />
+            <button type="submit">Search</button>
+        </form>
+        <p>Or try adding ?search=username to the end of the URL</p>
+        <p>example: whateverUrlGetsCreated/?search=f</p>
+        <a href="/new">Create a username</a>
+        <a href="/delete">Delete all usernames</a>
+    </body>
+</html>
